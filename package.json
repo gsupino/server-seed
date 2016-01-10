@@ -1,5 +1,5 @@
 {
-  "name": "server seed",
+  "name": "server-seed",
   "version": "0.0.1",
   "description": "Server seed w/ Babel",
   "main": "lib/index.js",
