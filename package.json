@@ -2,7 +2,7 @@
   "name": "server-seed",
   "version": "0.0.1",
   "description": "Server seed w/ Babel",
-  "main": "lib/index.js",
+  "main": "lib/server.js",
   "scripts": {
     "start": "nodemon lib/server.js --exec babel-node --presets es2015,stage-2",
     "build": "babel lib -d dist",
