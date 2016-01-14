@@ -7,6 +7,7 @@
     "start": "nodemon lib/server.js --exec babel-node --presets es2015,stage-2 --plugins syntax-async-functions,transform-regenerator",
     "build": "babel lib -d dist",
     "serve": "node dist/index.js",
+    "start-dev":"nodemon dev/index.js",
     "start-win": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\nodemon\\bin\\nodemon.js --exec npm run babel-node lib/server.js ",
     "build-win": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\babel-cli\\bin\\babel.js lib -d dist",
     "serve-win": "node dist/index.js",
