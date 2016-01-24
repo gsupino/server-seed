@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient;
 const _ = require('lodash');
 const ObjectId = require('mongodb').ObjectId;
 
@@ -62,12 +62,37 @@ export default class AdapterMongo {
     }
 
     async delete(collection, id) {
-
-
+        id=castId(id);
+        try {
+            const col = this._db.collection(collection);
+            let cursor = await col.deleteOne({_id:id}, {w:1});
+            return cursor.deletedCount;
+        } catch (err) {
+            throw err;
+        }
     }
 
+    async deleteOne(collection, query) {
+        query = castQueryIds(query);
+        try {
+            const col = this._db.collection(collection);
+            let cursor = await col.deleteOne(query, {w:1});
+            return cursor.deletedCount;
+        } catch (err) {
+            throw err;
+        }
+    }
 
-
+    async deleteMany(collection, query) {
+        query = castQueryIds(query);
+        try {
+            const col = this._db.collection(collection);
+            let cursor = await col.deleteMany(query, {w:1});
+            return cursor.deletedCount;
+        } catch (err) {
+            throw err;
+        }
+    }
 
 
 
@@ -76,7 +101,7 @@ export default class AdapterMongo {
         try {
             const col = this._db.collection(collection);
             let cursor = await col.find(query, projection).limit(1);
-            return cursor.next()
+            return cursor.next();
         } catch (err) {
             throw err;
         }
