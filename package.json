@@ -8,7 +8,7 @@
     "build": "babel lib -d dist",
     "serve": "node dist/index.js",
     "start-dev": "nodemon dev/index.js",
-    "start-win": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\nodemon\\bin\\nodemon.js --exec npm run babel-node lib/server.js ",
+    "start-win": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\nodemon\\bin\\nodemon.js lib/start.js ",
     "build-win": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\babel-cli\\bin\\babel.js lib -d dist",
     "serve-win": "node dist/index.js",
     "start-win-dev": "node C:\\Gianluca\\dev\\dev\\server-seed\\node_modules\\nodemon\\bin\\nodemon.js dev/index.js "
@@ -29,6 +29,7 @@
     "mongodb": "^2.1.3",
     "morgan": "^1.6.1",
     "multer": "^1.1.0",
+    "pluralize": "^1.2.1",
     "winston": "^2.1.1"
   },
   "devDependencies": {
